@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Programs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e0ffe0;
+        border-radius: 5px;
+        border: 1px solid #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="file:///C:/Users/user/OneDrive/Ishchi%20stol/Cowork/IT/Virtual%20filio/html/index.html#portfolio"
+      style="position: absolute; top: 10px; left: 10px"
+    >
+      <img src="left-arrow.png" alt="Back" style="width: 50px; height: 50px" />
+    </a>
+    <h1 style="color: gold">JavaScript Programs</h1>
+    <div class="container">
+      <h2>1. a sonining 4-darajasi (ikki marta ko'paytirish)</h2>
+      <input type="number" id="inputA" placeholder="Son kiriting" />
+      <button onclick="calculateFourthPower()">Hisoblash</button>
+      <div id="result4" class="result"></div>
+
+      <h2>2. a sonining 6-darajasi (uch marta ko'paytirish)</h2>
+      <input type="number" id="inputB" placeholder="Son kiriting" />
+      <button onclick="calculateSixthPower()">Hisoblash</button>
+      <div id="result6" class="result"></div>
+
+      <h2>3. a > 2 va b < 15 tekshirish</h2>
+      <input type="number" id="inputA2" placeholder="a sonini kiriting" />
+      <input type="number" id="inputB2" placeholder="b sonini kiriting" />
+      <button onclick="checkTruthAB()">Tekshirish</button>
+      <div id="resultAB" class="result"></div>
+
+      <h2>4. a = 9 va b > 3 tekshirish</h2>
+      <input type="number" id="inputA3" placeholder="a sonini kiriting" />
+      <input type="number" id="inputB3" placeholder="b sonini kiriting" />
+      <button onclick="checkTruthA9B3()">Tekshirish</button>
+      <div id="resultA9B3" class="result"></div>
+
+      <h2>5. a soni b va c sonlar orasida tekshirish</h2>
+      <input type="number" id="inputA4" placeholder="a sonini kiriting" />
+      <input type="number" id="inputB4" placeholder="b sonini kiriting" />
+      <input type="number" id="inputC4" placeholder="c sonini kiriting" />
+      <button onclick="checkTruthABC()">Tekshirish</button>
+      <div id="resultABC" class="result"></div>
+
+      <h2>6. a va b sonlari manfiy yoki c soni manfiy tekshirish</h2>
+      <input type="number" id="inputA5" placeholder="a sonini kiriting" />
+      <input type="number" id="inputB5" placeholder="b sonini kiriting" />
+      <input type="number" id="inputC5" placeholder="c sonini kiriting" />
+      <button onclick="checkTruthABCManfiy()">Tekshirish</button>
+      <div id="resultABCManfiy" class="result"></div>
+
+      <h2>7. a soni juft yoki toqligini tekshirish</h2>
+      <input type="number" id="inputA6" placeholder="Son kiriting" />
+      <button onclick="checkEvenOdd()">Tekshirish</button>
+      <div id="resultEvenOdd" class="result"></div>
+    </div>
+
+    <script>
+      // 1. a sonining 4-darajasi
+      function calculateFourthPower() {
+        const a = parseInt(document.getElementById("inputA").value);
+        let result = a * 2;
+        result *= 2;
+        document.getElementById(
+          "result4"
+        ).innerText = `${a} sonining 4-darajasi: ${result}`;
+      }
+
+      // 2. a sonining 6-darajasi
+      function calculateSixthPower() {
+        const a = parseInt(document.getElementById("inputB").value);
+        const square = a * a;
+        const sixthPower = square * square * square;
+        document.getElementById(
+          "result6"
+        ).innerText = `${a} sonining 6-darajasi: ${sixthPower}`;
+      }
+
+      // 3. a > 2 va b < 15
+      function checkTruthAB() {
+        const a = parseInt(document.getElementById("inputA2").value);
+        const b = parseInt(document.getElementById("inputB2").value);
+        const result = a > 2 && b < 15;
+        document.getElementById("resultAB").innerText = result
+          ? "Jumlalar rost"
+          : "Jumlalar noto'g'ri";
+      }
+
+      // 4. a = 9 va b > 3
+      function checkTruthA9B3() {
+        const a = parseInt(document.getElementById("inputA3").value);
+        const b = parseInt(document.getElementById("inputB3").value);
+        const result = a === 9 && b > 3;
+        document.getElementById("resultA9B3").innerText = result
+          ? "Jumlalar rost"
+          : "Jumlalar noto'g'ri";
+      }
+
+      // 5. a soni b va c sonlar orasida
+      function checkTruthABC() {
+        const a = parseInt(document.getElementById("inputA4").value);
+        const b = parseInt(document.getElementById("inputB4").value);
+        const c = parseInt(document.getElementById("inputC4").value);
+        const result = a > b && a < c;
+        document.getElementById("resultABC").innerText = result
+          ? "Jumlalar rost"
+          : "Jumlalar noto'g'ri";
+      }
+
+      // 6. a va b sonlari manfiy yoki c soni manfiy
+      function checkTruthABCManfiy() {
+        const a = parseInt(document.getElementById("inputA5").value);
+        const b = parseInt(document.getElementById("inputB5").value);
+        const c = parseInt(document.getElementById("inputC5").value);
+        const result = (a < 0 && b < 0) || c < 0;
+        document.getElementById("resultABCManfiy").innerText = result
+          ? "Jumlalar rost"
+          : "Jumlalar noto'g'ri";
+      }
+
+      // 7. a soni juft yoki toq
+      function checkEvenOdd() {
+        const a = parseInt(document.getElementById("inputA6").value);
+        const result = a % 2 === 0 ? "Juft son" : "Toq son";
+        document.getElementById(
+          "resultEvenOdd"
+        ).innerText = `${a} soni: ${result}`;
+      }
+    </script>
+  </body>
+</html>
